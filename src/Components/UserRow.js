@@ -1,14 +1,10 @@
 import * as React from "react";
 
 export function UserRow({ user, onActivate, onDelete }) {
-  console.log("UserRow render")
-  function activeHandler() {
-    onActivate(user.id);
-  }
+  console.log("UserRow render");
 
-  function deleteHandler() {
-    onDelete(user.id);
-  }
+  const activeHandler = () => onActivate(user.id);
+  const deleteHandler = () => onDelete(user.id);
 
   return (
     <tr>
