@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export function UserRow({ user, onActivate, onDelete }) {
-  console.log("UserRow render")
+  console.log("UserRow render");
   function activeHandler() {
     onActivate(user.id);
   }
@@ -25,4 +25,12 @@ export function UserRow({ user, onActivate, onDelete }) {
   );
 }
 
-export default UserRow;
+export const MemoizedUserRow = React.memo(
+  UserRow,
+  (prevProps, nextProps) =>
+    prevProps.user.active === nextProps.user.active &&
+    prevProps.onActivate === nextProps.onActivate &&
+    prevProps.onDelete === nextProps.onDelete
+);
+
+export default MemoizedUserRow;
