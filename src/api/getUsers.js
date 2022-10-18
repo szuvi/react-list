@@ -1,7 +1,8 @@
-import users from "./users.json";
+const URL = "https://tranquil-ravine-39028.herokuapp.com/";
 
-export function getUsers() {
-  return new Promise((res) => setTimeout(res(users), 1000));
+export async function getUsers() {
+  const users = await fetch(URL);
+  return users;
 }
 
 export const api = { getUsers };
