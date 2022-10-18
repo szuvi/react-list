@@ -24,14 +24,14 @@ export function Users() {
         })
       );
     },
-    [setUsers]
+    []
   );
 
   const deleteHandler = React.useCallback(
     (id) => {
       setUsers((currUsers) => currUsers.filter((user) => user.id !== id));
     },
-    [setUsers]
+    []
   );
 
   if (users.length === 0) {
